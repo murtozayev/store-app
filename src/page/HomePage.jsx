@@ -1,7 +1,6 @@
 import Card from "../components/Card"
 import { useFetch } from "../components/hook/useFetch"
 import Navbar from "../components/Navbar"
-import { PropagateLoader } from "react-spinners"
 
 const HomePage = () => {
 
@@ -11,7 +10,7 @@ const HomePage = () => {
         <div className="home">
             <Navbar />
             <h1>This is our store</h1>
-            {loading && <div id="loader"><PropagateLoader size={20} color="blue" /></div>}
+            {loading && <div id="loader">Loading...</div>}
             {(error || data.length < 1) && <h1 className="error">There is no products</h1>}
             <div className="card">
                 {data && data.map((item, index) => {
